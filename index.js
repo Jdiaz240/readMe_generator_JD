@@ -7,10 +7,10 @@
 // function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-// function init() {}
+function init() {}
 
 // Function call to initialize app
-// init();
+init();
 
 
 const inquirer = require('inquirer');
@@ -20,9 +20,9 @@ const fs = require('fs');
 inquirer
   .prompt([
     {
-      type: 'input',
-      message: 'What is the name of your project?',
-      name: 'projectName',
+        type: 'input',
+        message: 'What is the name of your project?',
+        name: 'projectName',
     },
     {
         type: 'input',
@@ -30,23 +30,29 @@ inquirer
         name: 'personName',
     },
     {
-      type: 'input',
-      message: 'What technologies did you use in this project?',
-      name: 'tech',
+        type: 'input',
+        message: 'What technologies did you use in this project?',
+        name: 'tech',
     },
     {
-      type: 'input',
-      message: 'what is your github repository link?',
-      name: 'repo',
+        type: 'input',
+        message: 'what is your github repository link?',
+        name: 'repo',
     },
     {
-      type: 'input',
-      message: 'what is your github repository link?',
-      name: 'repo',
+        type: 'input',
+        message: 'what is your github live link?',
+        name: 'repo',
     },
+    {
+        type: 'input',
+        message: 'What is the link/file path for your image?',
+        name: 'projectPic',
+    },
+
   ])
   .then((data) => {
-    let md = `# passowrdGenerator_JD
+    let md = `# 
     ${data.projectName}
     
     
@@ -61,15 +67,12 @@ inquirer
     
     # Project Location:
     [Github Live Link](${data.repo})
+
+    # Project Image:
+    [Project Image](${data.projectPic})`
     
     fs.writeFile('readMe.md', (md), (err) =>
       err ? console.log(err) : console.log('Success!')
     );
   });
 
-//   `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="ie=edge">
-//     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-//     <title>Document</title></head><body><div class="jumbotron jumbotron-fluid"><div class="container"><h1 class="display-4">Hi! My name is ${data.personName}</h1>
-//     <p class="lead">I am from ${data.location}</p><h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
-//     <ul class="list-group"><li class="list-group-item">My GitHub username is ${data.github}</li>
-//     <li class="list-group-item">LinkedIn: ${data.linkedin}</li></ul></div></div></body></html>`
