@@ -77,6 +77,12 @@ inquirer
         message: questions[10],
         name: 'projectPic',
     },
+    {
+        type: 'list',
+        name: 'license',
+        message: 'What kind of license should your project have?',
+        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
+    },
 
   ])
   .then((data) => {
@@ -105,6 +111,8 @@ ${data.test}
 # Project Location:
 [Github Repo Link](${data.repo})
 [Github Live Link](${data.live})
+
+![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)
 
 # Project Image:
 [Project Image](${data.projectPic})`
