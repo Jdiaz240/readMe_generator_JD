@@ -15,10 +15,43 @@ const questions = ['What is the name of your project?','Who completed this proje
 // Function call to initialize app
 //init();
 
-
+const generateMarkdown = require('./generateMarkdown')
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateReadMe = ({ projectName,personName,des,install,usage,cont,test,repo,live,projectPic,license}) =>
+`# ${projectName}
 
+
+Completed by ${personName}
+
+# Table of Contents: 
+
+
+# Project Description:
+${des}
+
+
+# Installation Installation:
+${install}
+
+# Usage information:
+${usage}
+
+# Contribution Guidlines:
+${cont}
+
+# Test Instructions:
+${test}
+
+# Project Location:
+[Github Repo Link](${repo})
+[Github Live Link](${live})
+
+
+${generateMarkdown.renderLicenseBadge(license)}
+
+# Project Image:
+[Project Image](${projectPic})`
 
 inquirer
   .prompt([
@@ -60,21 +93,16 @@ inquirer
     {
         type: 'input',
         message: questions[7],
-        name: 'des',
-    },
-    {
-        type: 'input',
-        message: questions[8],
         name: 'repo',
     },
     {
         type: 'input',
-        message: questions[9],
+        message: questions[8],
         name: 'live',
     },
     {
         type: 'input',
-        message: questions[10],
+        message: questions[9],
         name: 'projectPic',
     },
     {
@@ -86,39 +114,15 @@ inquirer
 
   ])
   .then((data) => {
-    let md = `# ${data.projectName}
-
-
-Completed by ${data.personName}
-
-
-# Project Description:
-${data.des}
-
-
-# Installation Installation:
-${data.install}
-
-# Usage information:
-${data.usage}
-
-# Contribution Guidlines:
-${data.cont}
-
-# Test Instructions:
-${data.test}
-
-# Project Location:
-[Github Repo Link](${data.repo})
-[Github Live Link](${data.live})
-
-![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)
-
-# Project Image:
-[Project Image](${data.projectPic})`
-    
-    fs.writeFile('readMe.md', (md), (err) =>
+    const readMeContent = generateReadMe(data)
+    fs.writeFile ('readme.md', readMeContent, (err) =>
       err ? console.log(err) : console.log('Success!')
     );
   });
 
+//   .then((answers) => {
+//     const readMeContent = generateReadMe(answers);
+//     fs.writeFile(‘readme.md’, readMeContent, (err) =>
+//     err ? console.log(err) : console.log(‘Successfully created ReadMe.md!’)
+//     );
+//    });
