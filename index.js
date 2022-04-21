@@ -1,16 +1,19 @@
 // TODO: Include packages needed for this application
 
 // TODO: Create an array of questions for user input
-// const questions = [];
-
+const questions = ['What is the name of your project?','Who completed this project?','Describe your project.',
+    'Describe the isntallation process.','Usage information?','Contribution guidelines?',
+    'Test Instuctions','what is your github repository link?',
+    'what is your github live link?','What is the link/file path for your image?'];
+    
 // TODO: Create a function to write README file
 // function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+//function init() {}
 
 // Function call to initialize app
-init();
+//init();
 
 
 const inquirer = require('inquirer');
@@ -21,55 +24,90 @@ inquirer
   .prompt([
     {
         type: 'input',
-        message: 'What is the name of your project?',
+        message: questions[0],
         name: 'projectName',
     },
     {
         type: 'input',
-        message: 'Who completed this project?',
+        message: questions[1],
         name: 'personName',
     },
     {
         type: 'input',
-        message: 'What technologies did you use in this project?',
-        name: 'tech',
+        message: questions[2],
+        name: 'des',
     },
     {
         type: 'input',
-        message: 'what is your github repository link?',
+        message: questions[3],
+        name: 'install',
+    },
+    {
+        type: 'input',
+        message: questions[4],
+        name: 'usage',
+    },
+    {
+        type: 'input',
+        message: questions[5],
+        name: 'cont',
+    },
+    {
+        type: 'input',
+        message: questions[6],
+        name: 'test',
+    },
+    {
+        type: 'input',
+        message: questions[7],
+        name: 'des',
+    },
+    {
+        type: 'input',
+        message: questions[8],
         name: 'repo',
     },
     {
         type: 'input',
-        message: 'what is your github live link?',
-        name: 'repo',
+        message: questions[9],
+        name: 'live',
     },
     {
         type: 'input',
-        message: 'What is the link/file path for your image?',
+        message: questions[10],
         name: 'projectPic',
     },
 
   ])
   .then((data) => {
-    let md = `# 
-    ${data.projectName}
-    
-    
-    Completed by ${data.personName}
-    
-    
-    # Project Description:
-    
-    
-    Produced a Password Generator using Javascript, HTML, and CSS (HTML and CSS provided). Using functions, defined with If statements and linked to one another to produce a series of prompts that the user can confirm or cancel in order for the program to provide the desired password style.
-    ${data.tech}
-    
-    # Project Location:
-    [Github Live Link](${data.repo})
+    let md = `# ${data.projectName}
 
-    # Project Image:
-    [Project Image](${data.projectPic})`
+
+Completed by ${data.personName}
+
+
+# Project Description:
+${data.des}
+
+
+# Installation Installation:
+${data.install}
+
+# Usage information:
+${data.usage}
+
+# Contribution Guidlines:
+${data.cont}
+
+# Test Instructions:
+${data.test}
+
+# Project Location:
+[Github Repo Link](${data.repo})
+[Github Live Link](${data.live})
+
+# Project Image:
+[Project Image](${data.projectPic})`
     
     fs.writeFile('readMe.md', (md), (err) =>
       err ? console.log(err) : console.log('Success!')

@@ -1,15 +1,28 @@
-# passowrdGenerator_JD
-    readme gen
-    
-    
-    Completed by joshy
-    
-    
+# l
+
+
+Completed by kk
+
+
 # Project Description:
-    
-    
-    Produced a Password Generator using Javascript, HTML, and CSS (HTML and CSS provided). Using functions, defined with If statements and linked to one another to produce a series of prompts that the user can confirm or cancel in order for the program to provide the desired password style.
-    javascript
-    
+kk
+
+
+# Installation Installation:
+k
+
+# Usage information:
+kk
+
+#Contribution Guidlines:
+
+
+#Test Instructions:
+kk
+
 # Project Location:
-    [Github Live Link](read.git)
+[Github Repo Link](l)
+[Github Live Link](l)
+
+# Project Image:
+[Project Image](l)
