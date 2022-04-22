@@ -1,19 +1,7 @@
-// TODO: Include packages needed for this application
-
-// TODO: Create an array of questions for user input
 const questions = ['What is the name of your project?','Who completed this project?','Describe your project.',
     'Describe the isntallation process.','Usage information?','Contribution guidelines?',
     'Test Instuctions','what is your github repository link?',
     'what is your github live link?','What is the link/file path for your image?'];
-    
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-//function init() {}
-
-// Function call to initialize app
-//init();
 
 const generateMarkdown = require('./generateMarkdown')
 const inquirer = require('inquirer');
@@ -26,18 +14,34 @@ Completed by ${personName}
 
 # Table of Contents: 
 
+1. [Project Description](#ProjectDescription)
+
+2. [Installation](#Installation)
+
+3. [Usage Information](#UsageInformation)
+
+4. [Contribution Guidelines](#ContributionGuidelines)
+
+5. [Test Instructions](#TestInstructions)
+
+6. [Project Location](#ProjectLocation)
+
+7. [License](#License)
+
+8. [Project Image](#ProjectImage)
+
 
 # Project Description:
 ${des}
 
 
-# Installation Installation:
+# Installation:
 ${install}
 
 # Usage information:
 ${usage}
 
-# Contribution Guidlines:
+# Contribution Guidelines:
 ${cont}
 
 # Test Instructions:
@@ -120,9 +124,3 @@ inquirer
     );
   });
 
-//   .then((answers) => {
-//     const readMeContent = generateReadMe(answers);
-//     fs.writeFile(‘readme.md’, readMeContent, (err) =>
-//     err ? console.log(err) : console.log(‘Successfully created ReadMe.md!’)
-//     );
-//    });
