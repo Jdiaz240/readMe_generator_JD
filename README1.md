@@ -4,9 +4,9 @@ Completed by Joshua Diaz
 
 ## Table of Contents: 
 
-1. [Project Description](##project-description)
+1. [Project Description](#project-description)
 
-2. [Project Location](##project-location)
+2. [Project Location](#project-location)
 
 
 ## Project Description:
