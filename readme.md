@@ -1,7 +1,6 @@
 # read me gen
 
-
-Completed by Josh
+Completed by josh
 
 # Table of Contents: 
 
@@ -23,11 +22,11 @@ Completed by Josh
 
 
 # Project Description:
-A terminal generated read me
+a read me gen run through the terminal
 
 
 # Installation:
-use npm i 
+use npm i
 
 # Usage information:
 to create a read me
