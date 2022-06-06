@@ -14,21 +14,21 @@ Completed by ${personName}
 
 # Table of Contents: 
 
-1. [Project Description](#ProjectDescription)
+1. [Project Description](#project-description)
 
-2. [Installation](#Installation)
+2. [Installation](#installation)
 
-3. [Usage Information](#UsageInformation)
+3. [Usage Information](#usage-information)
 
-4. [Contribution Guidelines](#ContributionGuidelines)
+4. [Contribution Guidelines](#contribution-guidelines)
 
-5. [Test Instructions](#TestInstructions)
+5. [Test Instructions](#test-instructions)
 
-6. [Project Location](#ProjectLocation)
+6. [Project Location](#project-location)
 
-7. [License](#License)
+7. [License](#license)
 
-8. [Project Image](#ProjectImage)
+8. [Project Image](#project-image)
 
 
 # Project Description:
